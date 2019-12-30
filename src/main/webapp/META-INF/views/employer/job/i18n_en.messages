@@ -32,6 +32,9 @@ employer.job.form.button.duty = Duties
 employer.job.form.button.create-duty = Create Duty
 employer.job.form.button.return = Return
 
+employer.job.form.button.xxxx-challenge = List XXXXChallenge
+employer.job.form.button.create-xxxx-challenge = Create XXXXChallenge
+
 employer.job.form.placeholder.reference = Recomended the format: EMP1-JOB1
 
 administrator.challenge.form.error.tooClose = Deadline must be one week after the current date

@@ -29,6 +29,7 @@
 		<acme:form-checkbox code="employer.job.form.label.status" path="status"/>
 	    <acme:form-textbox code="employer.job.form.label.employer" path="employer.identity.fullName" readonly="true" />	
 	</jstl:if>
+	
 
 	
 	<acme:form-submit test="${command == 'show' }"
@@ -51,5 +52,9 @@
 	<acme:form-submit test="${command == 'show' && status == true}" code="employer.job.form.button.audit-record" action="/authenticated/audit-record/list-mine?jobid=${id}"  method="get"/>
 	<acme:form-submit test="${command == 'show' || command == 'update' }" code="employer.job.form.button.duty" action="/authenticated/duty/list-mine?jobid=${id}"  method="get"/>
 	<acme:form-submit test="${command == 'show' || command == 'update' }" code="employer.job.form.button.create-duty" action="/authenticated/duty/create?jobid=${id}" method="get"/>
+	
+	<acme:form-submit test="${command == 'show' || command == 'update' }" code="employer.job.form.button.xxxx-challenge" action="/authenticated/xxxx-challenge/list-mine?jobid=${id}"  method="get"/>
+	<acme:form-submit test="${command == 'show' || command == 'update' }" code="employer.job.form.button.create-xxxx-challenge" action="/authenticated/xxxx-challenge/create?jobid=${id}" method="get"/>
+ 
   	<acme:form-return code="employer.job.form.button.return"/>
 </acme:form>

@@ -31,6 +31,9 @@ employer.job.form.button.duty = Responsabilidades
 employer.job.form.button.create-duty = Crear Responsabilidad
 employer.job.form.button.return = Volver
 
+employer.job.form.button.xxxx-challenge = Listar XXXXChallenge
+employer.job.form.button.create-xxxx-challenge = Crear XXXXChallenge
+
 employer.job.form.placeholder.reference = Recomendado el formato: EMP1-JOB1
 
 administrator.challenge.form.error.tooClose = La Fecha de Fin debe estar una semana posterior a la fecha actual
