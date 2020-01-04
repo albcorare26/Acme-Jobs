@@ -17,29 +17,29 @@
 
 <acme:form>
 
-	<acme:form-textarea code="authenticated.xxxx-challenge.form.label.description" path="description"/>	
-	<acme:form-url code="authenticated.xxxx-challenge.form.label.moreInfo" path="moreInfo"/>
+	<acme:form-textarea code="employer.xxxx-challenge.form.label.description" path="description"/>	
+	<acme:form-url code="employer.xxxx-challenge.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-hidden path="jobid"/>
 
 	<acme:form-submit test="${command == 'show' }"
-		code="authenticated.xxxx-challenge.form.button.update" 
-		action="/authenticated/xxxx-challenge/update"/>
+		code="employer.xxxx-challenge.form.button.update" 
+		action="/employer/xxxx-challenge/update"/>
 		
 	<acme:form-submit test="${command == 'show' }"
-		code="authenticated.xxxx-challenge.form.button.delete" 
-		action="/authenticated/xxxx-challenge/delete"/>
+		code="employer.xxxx-challenge.form.button.delete" 
+		action="/employer/xxxx-challenge/delete"/>
 		
 	<acme:form-submit test="${command == 'create' }"
-		code="authenticated.xxxx-challenge.form.button.create" 
-		action="/authenticated/xxxx-challenge/create"/>
+		code="employer.xxxx-challenge.form.button.create" 
+		action="/employer/xxxx-challenge/create"/>
 		
 	<acme:form-submit test="${command == 'update' }"
-		code="authenticated.xxxx-challenge.form.button.update" 
-		action="/authenticated/xxxx-challenge/update"/>
+		code="employer.xxxx-challenge.form.button.update" 
+		action="/employer/xxxx-challenge/update"/>
 		
 	<acme:form-submit test="${command == 'delete' }"
-		code="authenticated.xxxx-challenge.form.button.delete" 
-		action="/authenticated/xxxx-challenge/delete"/>
+		code="employer.xxxx-challenge.form.button.delete" 
+		action="/employer/xxxx-challenge/delete"/>
 		
-	<acme:form-return code="authenticated.xxxx-challenge.form.button.return"/>
+	<acme:form-return code="employer.xxxx-challenge.form.button.return"/>
 </acme:form> 

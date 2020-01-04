@@ -29,6 +29,7 @@
 	<acme:form-textarea code="worker.application.form.label.statement" path="statement"/>
 	<acme:form-textarea code="worker.application.form.label.skills" path="skills" />
 	<acme:form-textarea code="worker.application.form.label.qualifications" path="qualifications" />
+	<acme:form-password code="worker.application.form.label.password" path="password" />
 
 	
 	<acme:form-submit test="${command == 'create' }" code="worker.application.form.button.createApplication" action="/worker/application/create" method ="post" />

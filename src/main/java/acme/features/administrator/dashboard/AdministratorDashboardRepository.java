@@ -39,4 +39,10 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select DAY(moment), count(a) from Application a where (a.status = 'rejected' and a.moment > ?1) group by DAY(a.moment)")
 	Collection<Object[]> findByRejected(Date moment);
 
+	@Query("select count(a) from XXXXChallenge a")
+	Double findRatioXXXXChallenge();
+
+	@Query("select count(a) from Application a where a.password <> '' ")
+	Double findRatioPassword();
+
 }

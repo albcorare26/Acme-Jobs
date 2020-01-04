@@ -27,6 +27,7 @@
        `id` integer not null,
         `version` integer not null,
         `moment` datetime(6),
+        `password` varchar(255),
         `qualifications` varchar(1024),
         `reason` varchar(1024),
         `reference_number` varchar(255),
@@ -181,7 +182,7 @@
        `id` integer not null,
         `version` integer not null,
         `deadline` datetime(6),
-        `description` varchar(255),
+        `description` varchar(1024),
         `more_info` varchar(255),
         `reference` varchar(255),
         `salary_amount` double precision,
@@ -195,7 +196,7 @@
     create table `message` (
        `id` integer not null,
         `version` integer not null,
-        `body` varchar(255),
+        `body` varchar(1024),
         `moment` datetime(6),
         `tags` varchar(255),
         `title` varchar(255),
@@ -304,6 +305,15 @@
         `user_account_id` integer,
         `qualifications_record` varchar(255),
         `skills_record` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `xxxxchallenge` (
+       `id` integer not null,
+        `version` integer not null,
+        `description` varchar(255),
+        `more_info` varchar(255),
+        `job_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -453,3 +463,8 @@ create index IDX9hmmho2f3h0l23kcwosgfodbf on `request` (`moment`);
        add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `xxxxchallenge` 
+       add constraint `FKs2nmqacsfb1fl09nedsk1r6kw` 
+       foreign key (`job_id`) 
+       references `job` (`id`);

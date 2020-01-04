@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.xxxxchallenge;
+package acme.features.employer.xxxxchallenge;
 
 import java.util.Collection;
 
@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.XXXXChallenge.XXXXChallenge;
+import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class XXXXChallengeListService implements AbstractListService<Authenticated, XXXXChallenge> {
+public class XXXXChallengeListService implements AbstractListService<Employer, XXXXChallenge> {
 
 	@Autowired
 	XXXXChallengeRepository repository;

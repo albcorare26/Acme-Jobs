@@ -293,6 +293,7 @@
 		<property name="qualifications" value="Universidad de la vida" />
 		<property name="job" ref="job1" />
 		<property name="worker" ref="worker1Worker" />
+		<property name="password" value="" />
 	</bean>
 	<bean name="application2" class="acme.entities.applications.Application">
 		<property name="referenceNumber" value="EMP1-JOB1:W102" />
@@ -303,6 +304,7 @@
 		<property name="qualifications" value="Universidad de Sevilla" />
 		<property name="job" ref="job1" />
 		<property name="worker" ref="worker1Worker" />
+		<property name="password" value="" />
 	</bean>
 	<bean name="application3" class="acme.entities.applications.Application">
 		<property name="referenceNumber" value="EMP1-JOB2:W201" />
@@ -313,6 +315,7 @@
 		<property name="qualifications" value="Universidad de Sevilla" />
 		<property name="job" ref="job2" />
 		<property name="worker" ref="worker2Worker" />
+		<property name="password" value="" />
 	</bean>
 	<bean name="application4" class="acme.entities.applications.Application">
 		<property name="referenceNumber" value="EMP1-JOB5:W101" />
@@ -323,6 +326,7 @@
 		<property name="qualifications" value="Universidad de la vida" />
 		<property name="job" ref="job1" />
 		<property name="worker" ref="worker1Worker" />
+		<property name="password" value="" />
 	</bean>
 	<bean name="application5" class="acme.entities.applications.Application">
 		<property name="referenceNumber" value="EMP1-JOB7:W101" />
@@ -333,6 +337,7 @@
 		<property name="qualifications" value="Universidad de la vida" />
 		<property name="job" ref="job1" />
 		<property name="worker" ref="worker1Worker" />
+		<property name="password" value="" />
 	</bean>
 	<bean name="application6" class="acme.entities.applications.Application">
 		<property name="referenceNumber" value="EMP1-JOB8:W101" />
@@ -343,6 +348,7 @@
 		<property name="qualifications" value="Universidad de la vida" />
 		<property name="job" ref="job1" />
 		<property name="worker" ref="worker1Worker" />
+		<property name="password" value="" />
 	</bean>
 	<bean name="application7" class="acme.entities.applications.Application">
 		<property name="referenceNumber" value="EMP1-JOB4:W101" />
@@ -353,6 +359,7 @@
 		<property name="qualifications" value="Universidad de la vida" />
 		<property name="job" ref="job1" />
 		<property name="worker" ref="worker1Worker" />
+		<property name="password" value="alberto" />
 	</bean>
 	
 	
@@ -637,5 +644,11 @@
 		<property name="thread" ref="thread01"/>
 		<property name="authenticated" ref="worker1Authenticathed" />
 		</bean>
+		
+		<bean id="XXXXChallenge" class="acme.entities.XXXXChallenge.XXXXChallenge">
+		<property name="description" value="Ejemplo"/>
+		<property name="moreInfo" value="http://www.google.com"/>
+		<property name="job" ref="job1" />
+	</bean>
 	
 </beans>

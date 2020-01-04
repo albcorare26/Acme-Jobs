@@ -1,19 +1,18 @@
 
-package acme.features.authenticated.xxxxchallenge;
+package acme.features.employer.xxxxchallenge;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.XXXXChallenge.XXXXChallenge;
-import acme.entities.jobs.Job;
+import acme.entities.roles.Employer;
+import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
-import acme.framework.entities.Principal;
-import acme.framework.services.AbstractShowService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class XXXXChallengeShowService implements AbstractShowService<Authenticated, XXXXChallenge> {
+public class XXXXChallengeUpdateService implements AbstractUpdateService<Employer, XXXXChallenge> {
 
 	@Autowired
 	XXXXChallengeRepository repository;
@@ -23,19 +22,17 @@ public class XXXXChallengeShowService implements AbstractShowService<Authenticat
 	public boolean authorise(final Request<XXXXChallenge> request) {
 		assert request != null;
 
-		boolean result;
-		int jobId;
-		XXXXChallenge challenge;
-		Job job;
-		Principal principal;
+		return true;
+	}
 
-		principal = request.getPrincipal();
-		jobId = request.getModel().getInteger("id");
-		challenge = this.repository.findOneById(jobId);
-		job = challenge.getJob();
-		result = challenge.getJob().getId() == job.getId(); //&& job.getEmployer().get == principal.getActiveRoleId();
+	@Override
+	public void bind(final Request<XXXXChallenge> request, final XXXXChallenge entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
 
-		return result;
+		request.bind(entity, errors);
+
 	}
 
 	@Override
@@ -59,6 +56,23 @@ public class XXXXChallengeShowService implements AbstractShowService<Authenticat
 		result = this.repository.findOneById(id);
 
 		return result;
+	}
+
+	@Override
+	public void validate(final Request<XXXXChallenge> request, final XXXXChallenge entity, final Errors errors) {
+		assert request != null;
+		assert entity != null;
+		assert errors != null;
+
+	}
+
+	@Override
+	public void update(final Request<XXXXChallenge> request, final XXXXChallenge entity) {
+		assert request != null;
+		assert entity != null;
+
+		this.repository.save(entity);
+
 	}
 
 }

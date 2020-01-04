@@ -34,4 +34,5 @@ public class XXXXChallenge extends DomainEntity {
 	@Valid
 	@OneToOne
 	private Job					job;
+
 }

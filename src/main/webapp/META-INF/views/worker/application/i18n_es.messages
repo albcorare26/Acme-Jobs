@@ -10,6 +10,7 @@
 
 worker.application.form.label.referenceNumber = Numero de referencia:
 worker.application.label.moment = Fecha:
+worker.application.form.label.password = Contraseña
 worker.application.label.status = Estado:
 worker.application.label.skills = Habilidades:
 worker.application.label.qualifications = Cualificaciones:
@@ -27,3 +28,4 @@ worker.application.form.label.qualifications = Titulaciones:
 worker.application.form.label.statement = Informe:
 worker.application.form.button.createApplication = Solicitar
 worker.application.form.error.reference = Referencia existente, pruebe con otra
+worker.application.form.error.password = La contraseña no un minumo de 3 letras, 3 digitos y 3 signos de puntuacion

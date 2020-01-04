@@ -91,6 +91,10 @@
        drop 
        foreign key FK_l5q1f33vs2drypmbdhpdgwfv3;
 
+    alter table `xxxxchallenge` 
+       drop 
+       foreign key `FKs2nmqacsfb1fl09nedsk1r6kw`;
+
     drop table if exists `administrator`;
 
     drop table if exists `announcement`;
@@ -148,5 +152,7 @@
     drop table if exists `user_account`;
 
     drop table if exists `worker`;
+
+    drop table if exists `xxxxchallenge`;
 
     drop table if exists `hibernate_sequence`;

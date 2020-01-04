@@ -5,3 +5,5 @@ administrator.dashboard.form.message4 = Ratio of applications grouped by status 
 administrator.dashboard.form.message5 = A time series with the number of accepted applications per day during the last four weeks
 administrator.dashboard.form.message6 = A time series with the number of pending applications per day during the last four weeks
 administrator.dashboard.form.message7 = A time series with the number of rejected applications per day during the last four weeks
+administrator.dashboard.form.message8 = The ratio of jobs that have a XXXXChallenge
+administrator.dashboard.form.message9 = The ratio of applications that include a password-protected XXXX

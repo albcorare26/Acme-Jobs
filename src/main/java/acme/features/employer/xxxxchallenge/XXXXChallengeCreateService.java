@@ -1,20 +1,20 @@
 
-package acme.features.authenticated.xxxxchallenge;
+package acme.features.employer.xxxxchallenge;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.XXXXChallenge.XXXXChallenge;
 import acme.entities.jobs.Job;
+import acme.entities.roles.Employer;
 import acme.features.employer.job.EmployerJobRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class XXXXChallengeCreateService implements AbstractCreateService<Authenticated, XXXXChallenge> {
+public class XXXXChallengeCreateService implements AbstractCreateService<Employer, XXXXChallenge> {
 
 	@Autowired
 	XXXXChallengeRepository	repository;
@@ -27,7 +27,14 @@ public class XXXXChallengeCreateService implements AbstractCreateService<Authent
 	public boolean authorise(final Request<XXXXChallenge> request) {
 		assert request != null;
 
-		return true;
+		boolean result = true;
+		int jobId = request.getModel().getInteger("jobid");
+
+		if (this.repository.findRatioXXXXChallenge(jobId) >= 1) {
+			result = false;
+		}
+
+		return result;
 	}
 
 	@Override

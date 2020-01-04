@@ -2,6 +2,7 @@
 package acme.features.worker.job;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,6 @@ import acme.entities.jobs.Job;
 import acme.entities.roles.Worker;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
@@ -43,10 +43,11 @@ public class WorkerJobListService implements AbstractListService<Worker, Job> {
 		assert request != null;
 
 		Collection<Job> result;
-		Principal principal;
 
-		principal = request.getPrincipal();
-		result = this.repository.findManyByWorkerId(principal.getActiveRoleId());
+		Date moment;
+		moment = new Date(System.currentTimeMillis() - 1);
+
+		result = this.repository.findManyByWorkerId(moment);
 
 		return result;
 	}

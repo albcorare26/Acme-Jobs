@@ -5,3 +5,5 @@ administrator.dashboard.form.message4 = Ratio de aplicacion agrupadas por status
 administrator.dashboard.form.message5 = Una serie temporal con el número de solicitudes aceptadas por día durante las últimas cuatro semanas
 administrator.dashboard.form.message6 = Una serie temporal con el número de solicitudes pendientes por día durante las últimas cuatro semanas
 administrator.dashboard.form.message7 = Una serie temporal con el número de solicitudes rechazadas por día durante las últimas cuatro semanas
+administrator.dashboard.form.message8 = Ratio de Trabajos que tienen un XXXXChallenge
+administrator.dashboard.form.message9 = Ratio de Applicaciones que tienen un password

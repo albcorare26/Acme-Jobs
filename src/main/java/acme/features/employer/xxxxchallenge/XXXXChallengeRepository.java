@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.xxxxchallenge;
+package acme.features.employer.xxxxchallenge;
 
 import java.util.Collection;
 
@@ -17,5 +17,8 @@ public interface XXXXChallengeRepository extends AbstractRepository {
 
 	@Query("select x from XXXXChallenge x where x.job.id = ?1")
 	Collection<XXXXChallenge> findManyByJobId(int jobId);
+
+	@Query("select count(a) from XXXXChallenge a where a.job.id = ?1")
+	int findRatioXXXXChallenge(int jobId);
 
 }

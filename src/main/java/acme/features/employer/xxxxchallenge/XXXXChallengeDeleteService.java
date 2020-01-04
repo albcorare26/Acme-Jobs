@@ -1,18 +1,18 @@
 
-package acme.features.authenticated.xxxxchallenge;
+package acme.features.employer.xxxxchallenge;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.XXXXChallenge.XXXXChallenge;
+import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractDeleteService;
 
 @Service
-public class XXXXChallengeDeleteService implements AbstractDeleteService<Authenticated, XXXXChallenge> {
+public class XXXXChallengeDeleteService implements AbstractDeleteService<Employer, XXXXChallenge> {
 
 	@Autowired
 	XXXXChallengeRepository repository;

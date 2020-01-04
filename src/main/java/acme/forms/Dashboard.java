@@ -31,4 +31,8 @@ public class Dashboard implements Serializable {
 
 	Collection<Object[]>		Rejected;
 
+	Double						ratioOfJobsThatHaveAXXXXChallenge;
+
+	Double						ratioOfPassword;
+
 }

@@ -32,7 +32,7 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 		application = this.repository.findOneApplicationById(applicationId);
 		worker = application.getWorker();
 		principal = request.getPrincipal();
-		result = application.getStatus().equals("accepted") || application.getStatus().equals("rejected") || application.getStatus().equals("pending") && worker.getUserAccount().getId() == principal.getActiveRoleId();
+		result = worker.getId() == principal.getActiveRoleId();
 		return result;
 	}
 

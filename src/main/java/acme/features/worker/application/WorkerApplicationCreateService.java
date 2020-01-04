@@ -52,7 +52,7 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "referenceNumber", "qualifications", "skills", "statement");
+		request.unbind(entity, model, "referenceNumber", "qualifications", "skills", "statement", "password");
 
 	}
 
@@ -89,10 +89,20 @@ public class WorkerApplicationCreateService implements AbstractCreateService<Wor
 		assert errors != null;
 
 		Collection<String> references;
+		String password = request.getModel().getString("password");
 
 		if (!errors.hasErrors("referenceNumber")) {
 			references = this.repository.allReferences();
 			errors.state(request, !references.contains(entity.getReferenceNumber()), "referenceNumber", "worker.application.form.error.reference");
+		}
+
+		if (!errors.hasErrors("password")) {
+			String numbers = password.replaceAll("\\D", "");
+			String letters = password.replaceAll("[^A-Za-z]", "");
+			String symbols = password.replaceAll("\\w", "");
+
+			//cambiar en numero en la entrega
+			errors.state(request, numbers.length() >= 3 && letters.length() >= 3 && symbols.length() >= 3 || password.equals(""), "password", "worker.application.form.error.password");
 		}
 
 	}

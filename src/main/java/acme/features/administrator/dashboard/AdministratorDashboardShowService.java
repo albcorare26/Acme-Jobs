@@ -35,7 +35,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "numberOfCompaniesGroupedBySector", "numberOfInvestorsGroupedBySector", "ratioOfJobsGroupedByStatus", "ratioOfApplicationsGroupedByStatus", "TotalJobs", "TotalApplications", "Accepted", "Pending", "Rejected");
+		request.unbind(entity, model, "numberOfCompaniesGroupedBySector", "numberOfInvestorsGroupedBySector", "ratioOfJobsGroupedByStatus", "ratioOfApplicationsGroupedByStatus", "TotalJobs", "TotalApplications", "Accepted", "Pending", "Rejected",
+			"ratioOfJobsThatHaveAXXXXChallenge", "ratioOfPassword");
 
 	}
 
@@ -56,6 +57,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		Collection<Object[]> accepted = this.repository.findByAccepted(moment);
 		Collection<Object[]> Pending = this.repository.findByPending(moment);
 		Collection<Object[]> Rejected = this.repository.findByRejected(moment);
+		Double ratioOfJobsThatHaveAXXXXChallenge = this.repository.findRatioXXXXChallenge();
+		Double ratioOfPassword = this.repository.findRatioPassword();
 
 		Dashboard result = new Dashboard();
 		result.setNumberOfCompaniesGroupedBySector(numberOfCompaniesGroupedBySector);
@@ -67,6 +70,8 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		result.setAccepted(accepted);
 		result.setPending(Pending);
 		result.setRejected(Rejected);
+		result.setRatioOfJobsThatHaveAXXXXChallenge(ratioOfJobsThatHaveAXXXXChallenge);
+		result.setRatioOfPassword(ratioOfPassword);
 
 		return result;
 

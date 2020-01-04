@@ -18,13 +18,13 @@
 
 <tiles-definitions>
 
-	<definition name="authenticated/xxxx-challenge/form" extends="master">		
-		<put-attribute name="body" type="template" value="../authenticated/xxxx-challenge/form.jsp" />
+	<definition name="employer/xxxx-challenge/form" extends="master">		
+		<put-attribute name="body" type="template" value="../employer/xxxx-challenge/form.jsp" />
 	</definition>
 
 
-	<definition name="authenticated/xxxx-challenge/list" extends="master">		
-		<put-attribute name="body" type="template" value="../authenticated/xxxx-challenge/list.jsp" />
+	<definition name="employer/xxxx-challenge/list" extends="master">		
+		<put-attribute name="body" type="template" value="../employer/xxxx-challenge/list.jsp" />
 	</definition>
 
 

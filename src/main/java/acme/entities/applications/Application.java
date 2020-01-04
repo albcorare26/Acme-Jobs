@@ -18,6 +18,8 @@ import org.hibernate.validator.constraints.Length;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Worker;
 import acme.framework.entities.DomainEntity;
+import acme.framework.helpers.PasswordHelper;
+import acme.framework.helpers.StringHelper;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -59,16 +61,34 @@ public class Application extends DomainEntity {
 	@Column(length = 1024)
 	private String				reason;
 
+	//cambiar en el examen---------------------------------------------------------------------------------
+	@Length(min = 5)
+	private String				password;
+
+
+	public String getPassword() {
+		return this.password;
+	}
+
+	public void setPassword(final String password) {
+		assert password == null || password.equals("") || !PasswordHelper.isEncoded(password);
+
+		if (!StringHelper.isBlank(password)) {
+			this.password = PasswordHelper.encode(password);
+		}
+	}
+
+
 	//Relationships--------------------------------------------------------------
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Worker				worker;
+	private Worker	worker;
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Job					job;
+	private Job		job;
 
 }

@@ -23,6 +23,7 @@ worker.job.form.label.employer = Empleador:
 worker.job.form.label.auditor = Auditor:
 worker.job.form.button.audit-record = Records de Auditores
 worker.job.form.button.duty = Responsabilidades 
+worker.job.form.button.xxxx-challenge = XXXXChallenge
 worker.job.form.button.return = Volver
 
 worker.job.form.button.createApplication = Solicitar

@@ -65,7 +65,21 @@
 <div>
 	<canvas id="canvas7"></canvas>
 </div>
+</br>
+<h2>
+	<acme:message code="administrator.dashboard.form.message8"/>
+</h2>
+<div>
+	<canvas id="canvas8"></canvas>
+</div>
 
+</br>
+<h2>
+	<acme:message code="administrator.dashboard.form.message9"/>
+</h2>
+<div>
+	<canvas id="canvas9"></canvas>
+</div>
 <script type="text/javascript">
 	$(document).ready(function() {
 		var data = {
@@ -458,6 +472,117 @@
 		
 	});
 		
+</script>
+
+<script type="text/javascript">	
+	$(document).ready(function() {
+		var data = {
+				labels: [
+						"Trabajos con XXXXChallenge",
+						"Trabajos sin XXXXChallenge"
+				],
+				datasets: [
+					{
+						data: [
+							<jstl:set var="totalJobs" value="${TotalJobs}"/>
+							<jstl:set var="ratioJobs" value="${ratioOfJobsThatHaveAXXXXChallenge}"/>
+							
+								<jstl:out value="${ratioOfJobsThatHaveAXXXXChallenge / totalJobs}"/>,
+								<jstl:out value="1 - ${ratioOfJobsThatHaveAXXXXChallenge / totalJobs}"/>,
+						],
+						backgroundColor: [
+					          "#f38b4a",
+					          "#56d798",
+					          "#ff8397",
+					          "#6970d5" 
+					        ],
+					}
+				]
+			};
+		
+		var options = {
+				scales : {
+					yAxes:[
+						{
+							ticks : {
+								suggestedMin : 0.0,
+								suggestedMax : 1.0
+							}
+						}
+					]
+				},
+				legend : {
+					display : false
+				}
+			};
+			
+		var canvas, context;
+			
+		canvas = document.getElementById("canvas8");
+		context = canvas.getContext("2d");
+		new Chart(context, {
+			type: "doughnut",
+			data: data,
+			options: options
+		});
+			
+	});
+</script>
+
+
+<script type="text/javascript">	
+	$(document).ready(function() {
+		var data = {
+				labels: [
+						"Application with password",
+						"Application whitout password"
+				],
+				datasets: [
+					{
+						data: [
+							<jstl:set var="totalApplication" value="${TotalApplications}"/>
+							<jstl:set var="ratioPassword" value="${ratioOfPassword}"/>
+							
+								<jstl:out value="${ratioPassword / totalApplication}"/>,
+								<jstl:out value="1 - ${ratioPassword / totalApplication}"/>,
+						],
+						backgroundColor: [
+					          "#f38b4a",
+					          "#56d798",
+					          "#ff8397",
+					          "#6970d5" 
+					        ],
+					}
+				]
+			};
+		
+		var options = {
+				scales : {
+					yAxes:[
+						{
+							ticks : {
+								suggestedMin : 0.0,
+								suggestedMax : 1.0
+							}
+						}
+					]
+				},
+				legend : {
+					display : false
+				}
+			};
+			
+		var canvas, context;
+			
+		canvas = document.getElementById("canvas9");
+		context = canvas.getContext("2d");
+		new Chart(context, {
+			type: "doughnut",
+			data: data,
+			options: options
+		});
+			
+	});
 </script>
 
 

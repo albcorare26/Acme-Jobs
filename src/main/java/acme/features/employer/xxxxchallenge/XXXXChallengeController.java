@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.xxxxchallenge;
+package acme.features.employer.xxxxchallenge;
 
 import javax.annotation.PostConstruct;
 
@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.components.CustomCommand;
 import acme.entities.XXXXChallenge.XXXXChallenge;
+import acme.entities.roles.Employer;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/authenticated/xxxx-challenge/")
-public class XXXXChallengeController extends AbstractController<Authenticated, XXXXChallenge> {
+@RequestMapping("/employer/xxxx-challenge/")
+public class XXXXChallengeController extends AbstractController<Employer, XXXXChallenge> {
 
 	@Autowired
 	XXXXChallengeListService	listMineService;
