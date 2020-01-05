@@ -54,7 +54,7 @@
 	<acme:form-submit test="${command == 'show' || command == 'update' }" code="employer.job.form.button.create-duty" action="/authenticated/duty/create?jobid=${id}" method="get"/>
 	
 	<acme:form-submit test="${command == 'show' || command == 'update' }" code="employer.job.form.button.xxxx-challenge" action="/employer/xxxx-challenge/list-mine?jobid=${id}"  method="get"/>
-	<acme:form-submit test="${command == 'show' || command == 'update' }" code="employer.job.form.button.create-xxxx-challenge" action="/employer/xxxx-challenge/create?jobid=${id}" method="get"/>
+	<acme:form-submit test="${command == 'show' && status == false }" code="employer.job.form.button.create-xxxx-challenge" action="/employer/xxxx-challenge/create?jobid=${id}" method="get"/>
  
   	<acme:form-return code="employer.job.form.button.return"/>
 </acme:form>
