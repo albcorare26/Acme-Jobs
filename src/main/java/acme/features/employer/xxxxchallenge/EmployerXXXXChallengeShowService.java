@@ -13,10 +13,10 @@ import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
-public class XXXXChallengeShowService implements AbstractShowService<Employer, XXXXChallenge> {
+public class EmployerXXXXChallengeShowService implements AbstractShowService<Employer, XXXXChallenge> {
 
 	@Autowired
-	XXXXChallengeRepository repository;
+	EmployerXXXXChallengeRepository repository;
 
 
 	@Override

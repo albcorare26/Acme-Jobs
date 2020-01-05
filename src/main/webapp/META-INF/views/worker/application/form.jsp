@@ -33,5 +33,8 @@
 
 	
 	<acme:form-submit test="${command == 'create' }" code="worker.application.form.button.createApplication" action="/worker/application/create" method ="post" />
+	<acme:form-submit test="${command == 'show' && status == 'rejected' }" code="worker.application.form.button.create-xxxx-answer" action="/worker/xxxx-answer/create?applicationid=${id}" method="get"/>
+	<acme:form-submit test="${command == 'show' || command == 'update' }" code="worker.application.form.button.xxxx-answer" action="/worker/xxxx-answer/list-mine?applicationid=${id}"  method="get"/>
+		
 	<acme:form-return code="worker.application.form.button.return" />
 </acme:form>

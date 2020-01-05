@@ -14,10 +14,10 @@ import acme.framework.components.Request;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class XXXXChallengeCreateService implements AbstractCreateService<Employer, XXXXChallenge> {
+public class EmployerXXXXChallengeCreateService implements AbstractCreateService<Employer, XXXXChallenge> {
 
 	@Autowired
-	XXXXChallengeRepository	repository;
+	EmployerXXXXChallengeRepository	repository;
 
 	@Autowired
 	EmployerJobRepository	jobRepository;

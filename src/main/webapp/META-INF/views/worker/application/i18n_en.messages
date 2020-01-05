@@ -22,6 +22,8 @@ worker.application.form.sponsor: Sponsor:
 worker.application.form.label.qualifications = Qualifications:
 worker.application.form.label.statement = Statement:
 worker.application.form.button.createApplication = Apply
+worker.application.form.button.xxxx-answer = List XXXXAnswer
+worker.application.form.button.create-xxxx-answer = Create XXXXAnswer
 worker.application.form.label.referenceNumber = Reference number:
 worker.application.form.error.reference = Existing reference, try another
 worker.application.form.error.password = The password is not a minimum of 3 letters, 3 digits and 3 punctuation marks

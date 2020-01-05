@@ -9,13 +9,13 @@ import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.services.AbstractUpdateService;
+import acme.framework.services.AbstractDeleteService;
 
 @Service
-public class XXXXChallengeUpdateService implements AbstractUpdateService<Employer, XXXXChallenge> {
+public class EmployerXXXXChallengeDeleteService implements AbstractDeleteService<Employer, XXXXChallenge> {
 
 	@Autowired
-	XXXXChallengeRepository repository;
+	EmployerXXXXChallengeRepository repository;
 
 
 	@Override
@@ -67,11 +67,8 @@ public class XXXXChallengeUpdateService implements AbstractUpdateService<Employe
 	}
 
 	@Override
-	public void update(final Request<XXXXChallenge> request, final XXXXChallenge entity) {
-		assert request != null;
-		assert entity != null;
-
-		this.repository.save(entity);
+	public void delete(final Request<XXXXChallenge> request, final XXXXChallenge entity) {
+		this.repository.delete(entity);
 
 	}
 

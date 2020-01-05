@@ -27,5 +27,7 @@ worker.application.form.label.skills = Skills:
 worker.application.form.label.qualifications = Titulaciones:
 worker.application.form.label.statement = Informe:
 worker.application.form.button.createApplication = Solicitar
+worker.application.form.button.xxxx-answer = Lista de XXXXAnswer
+worker.application.form.button.create-xxxx-answer = Crear XXXXAnswer
 worker.application.form.error.reference = Referencia existente, pruebe con otra
 worker.application.form.error.password = La contraseña no un minumo de 3 letras, 3 digitos y 3 signos de puntuacion

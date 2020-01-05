@@ -15,22 +15,22 @@ import acme.framework.controllers.AbstractController;
 
 @Controller
 @RequestMapping("/employer/xxxx-challenge/")
-public class XXXXChallengeController extends AbstractController<Employer, XXXXChallenge> {
+public class EmployerXXXXChallengeController extends AbstractController<Employer, XXXXChallenge> {
 
 	@Autowired
-	XXXXChallengeListService	listMineService;
+	EmployerXXXXChallengeListService	listMineService;
 
 	@Autowired
-	XXXXChallengeShowService	showService;
+	EmployerXXXXChallengeShowService	showService;
 
 	@Autowired
-	XXXXChallengeCreateService	createService;
+	EmployerXXXXChallengeCreateService	createService;
 
 	@Autowired
-	XXXXChallengeUpdateService	updateService;
+	EmployerXXXXChallengeUpdateService	updateService;
 
 	@Autowired
-	XXXXChallengeDeleteService	deleteService;
+	EmployerXXXXChallengeDeleteService	deleteService;
 
 
 	@PostConstruct

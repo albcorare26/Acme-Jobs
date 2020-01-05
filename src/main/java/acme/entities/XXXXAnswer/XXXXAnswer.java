@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
@@ -23,12 +24,13 @@ public class XXXXAnswer extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
 
-	@NotNull
+	@NotBlank
 	@Column(length = 1024)
 	private String				description;
 
 	private String				moreInfo;
 
+	//	@Pattern(regexp = "^(?=.*[A-Za-z].*){2,}(?=.*\\d.*){2,}(?=.*[\\p{P}].*){2,}[A-Za-z\\d\\p{P}]{8,}$")
 	@Length(min = 5)
 	private String				password;
 

@@ -13,10 +13,10 @@ import acme.framework.components.Request;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class XXXXChallengeListService implements AbstractListService<Employer, XXXXChallenge> {
+public class EmployerXXXXChallengeListService implements AbstractListService<Employer, XXXXChallenge> {
 
 	@Autowired
-	XXXXChallengeRepository repository;
+	EmployerXXXXChallengeRepository repository;
 
 
 	@Override

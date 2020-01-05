@@ -9,13 +9,13 @@ import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.services.AbstractDeleteService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class XXXXChallengeDeleteService implements AbstractDeleteService<Employer, XXXXChallenge> {
+public class EmployerXXXXChallengeUpdateService implements AbstractUpdateService<Employer, XXXXChallenge> {
 
 	@Autowired
-	XXXXChallengeRepository repository;
+	EmployerXXXXChallengeRepository repository;
 
 
 	@Override
@@ -64,11 +64,25 @@ public class XXXXChallengeDeleteService implements AbstractDeleteService<Employe
 		assert entity != null;
 		assert errors != null;
 
+		String password = request.getModel().getString("password");
+
+		if (!errors.hasErrors("password")) {
+			String numbers = password.replaceAll("\\D", "");
+			String letters = password.replaceAll("[^A-Za-z]", "");
+			String symbols = password.replaceAll("\\w", "");
+
+			//cambiar en numero en la entrega
+			errors.state(request, numbers.length() >= 3 && letters.length() >= 3 && symbols.length() >= 3 || password.equals(""), "password", "worker.application.form.error.password");
+		}
+
 	}
 
 	@Override
-	public void delete(final Request<XXXXChallenge> request, final XXXXChallenge entity) {
-		this.repository.delete(entity);
+	public void update(final Request<XXXXChallenge> request, final XXXXChallenge entity) {
+		assert request != null;
+		assert entity != null;
+
+		this.repository.save(entity);
 
 	}
 

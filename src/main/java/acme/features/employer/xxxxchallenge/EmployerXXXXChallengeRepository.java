@@ -10,7 +10,7 @@ import acme.entities.XXXXChallenge.XXXXChallenge;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface XXXXChallengeRepository extends AbstractRepository {
+public interface EmployerXXXXChallengeRepository extends AbstractRepository {
 
 	@Query("select x from XXXXChallenge x where x.id = ?1")
 	XXXXChallenge findOneById(int id);
