@@ -42,7 +42,7 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select count(a) from XXXXChallenge a")
 	Double findRatioXXXXChallenge();
 
-	@Query("select count(a) from Application a where a.password <> '' ")
+	@Query("select count(a) from XXXXAnswer a")
 	Double findRatioPassword();
 
 }
