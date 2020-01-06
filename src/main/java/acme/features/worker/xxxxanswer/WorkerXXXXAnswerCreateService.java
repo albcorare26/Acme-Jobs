@@ -11,6 +11,7 @@ import acme.features.worker.application.WorkerApplicationRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractCreateService;
 
 @Service
@@ -27,7 +28,15 @@ public class WorkerXXXXAnswerCreateService implements AbstractCreateService<Work
 	public boolean authorise(final Request<XXXXAnswer> request) {
 		assert request != null;
 
-		return true;
+		Principal principal = request.getPrincipal();
+		int applicationId = request.getModel().getInteger("applicationid");
+
+		Application application = this.repository.findApplicationById(applicationId);
+
+		boolean result;
+		result = application.getWorker().getId() == principal.getActiveRoleId();
+
+		return result;
 	}
 
 	@Override

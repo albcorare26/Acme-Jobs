@@ -308,6 +308,16 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `xxxxanswer` (
+       `id` integer not null,
+        `version` integer not null,
+        `description` varchar(1024),
+        `more_info` varchar(255),
+        `password` varchar(255),
+        `application_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `xxxxchallenge` (
        `id` integer not null,
         `version` integer not null,
@@ -463,6 +473,11 @@ create index IDX9hmmho2f3h0l23kcwosgfodbf on `request` (`moment`);
        add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `xxxxanswer` 
+       add constraint `FKsxhf1nn0w6vyhsjr3q07n4xvp` 
+       foreign key (`application_id`) 
+       references `application` (`id`);
 
     alter table `xxxxchallenge` 
        add constraint `FKs2nmqacsfb1fl09nedsk1r6kw` 

@@ -91,6 +91,10 @@
        drop 
        foreign key FK_l5q1f33vs2drypmbdhpdgwfv3;
 
+    alter table `xxxxanswer` 
+       drop 
+       foreign key `FKsxhf1nn0w6vyhsjr3q07n4xvp`;
+
     alter table `xxxxchallenge` 
        drop 
        foreign key `FKs2nmqacsfb1fl09nedsk1r6kw`;
@@ -152,6 +156,8 @@
     drop table if exists `user_account`;
 
     drop table if exists `worker`;
+
+    drop table if exists `xxxxanswer`;
 
     drop table if exists `xxxxchallenge`;
 

@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.XXXXAnswer.XXXXAnswer;
+import acme.entities.applications.Application;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -20,5 +21,8 @@ public interface WorkerXXXXAnswerRepository extends AbstractRepository {
 
 	@Query("select count(a) from XXXXAnswer a where a.application.id = ?1")
 	int findRatioXXXXAnswer(int applicationId);
+
+	@Query("select a from Application a where a.id = ?1")
+	Application findApplicationById(int applicationId);
 
 }
