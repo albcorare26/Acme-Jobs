@@ -181,7 +181,7 @@
        `id` integer not null,
         `version` integer not null,
         `deadline` datetime(6),
-        `description` varchar(255),
+        `description` varchar(1024),
         `more_info` varchar(255),
         `reference` varchar(255),
         `salary_amount` double precision,
@@ -195,7 +195,7 @@
     create table `message` (
        `id` integer not null,
         `version` integer not null,
-        `body` varchar(255),
+        `body` varchar(1024),
         `moment` datetime(6),
         `tags` varchar(255),
         `title` varchar(255),

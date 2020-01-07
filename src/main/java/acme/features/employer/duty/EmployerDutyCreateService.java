@@ -1,26 +1,26 @@
 
-package acme.features.authenticated.duty;
+package acme.features.employer.duty;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.duties.Duty;
 import acme.entities.jobs.Job;
+import acme.entities.roles.Employer;
 import acme.features.employer.job.EmployerJobRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
 import acme.framework.services.AbstractCreateService;
 
 @Service
-public class AuthenticatedDutyCreateService implements AbstractCreateService<Authenticated, Duty> {
+public class EmployerDutyCreateService implements AbstractCreateService<Employer, Duty> {
 
 	@Autowired
-	AuthenticatedDutyRepository	repository;
+	EmployerDutyRepository	repository;
 
 	@Autowired
-	EmployerJobRepository		jobRepository;
+	EmployerJobRepository	jobRepository;
 
 
 	@Override
@@ -74,7 +74,7 @@ public class AuthenticatedDutyCreateService implements AbstractCreateService<Aut
 		assert errors != null;
 
 		if (!errors.hasErrors("percentage")) {
-			errors.state(request, entity.getPercentage() > 0, "percentage", "authenticated.duty.form.error.percentage");
+			errors.state(request, entity.getPercentage() > 0, "percentage", "employer.duty.form.error.percentage");
 		}
 
 	}

@@ -1,21 +1,21 @@
 
-package acme.features.authenticated.duty;
+package acme.features.employer.duty;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.duties.Duty;
+import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Authenticated;
-import acme.framework.services.AbstractUpdateService;
+import acme.framework.services.AbstractDeleteService;
 
 @Service
-public class AuthenticatedDutyUpdateService implements AbstractUpdateService<Authenticated, Duty> {
+public class EmployerDutyDeleteService implements AbstractDeleteService<Employer, Duty> {
 
 	@Autowired
-	AuthenticatedDutyRepository repository;
+	EmployerDutyRepository repository;
 
 
 	@Override
@@ -31,7 +31,7 @@ public class AuthenticatedDutyUpdateService implements AbstractUpdateService<Aut
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "job");
+		request.bind(entity, errors);
 
 	}
 
@@ -67,11 +67,9 @@ public class AuthenticatedDutyUpdateService implements AbstractUpdateService<Aut
 	}
 
 	@Override
-	public void update(final Request<Duty> request, final Duty entity) {
-		assert request != null;
-		assert entity != null;
+	public void delete(final Request<Duty> request, final Duty entity) {
 
-		this.repository.save(entity);
+		this.repository.delete(entity);
 
 	}
 

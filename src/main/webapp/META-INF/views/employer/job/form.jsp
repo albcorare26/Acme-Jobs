@@ -49,7 +49,7 @@
 
 	
 	<acme:form-submit test="${command == 'show' && status == true}" code="employer.job.form.button.audit-record" action="/authenticated/audit-record/list-mine?jobid=${id}"  method="get"/>
-	<acme:form-submit test="${command == 'show' || command == 'update' }" code="employer.job.form.button.duty" action="/authenticated/duty/list-mine?jobid=${id}"  method="get"/>
-	<acme:form-submit test="${command == 'show' || command == 'update' }" code="employer.job.form.button.create-duty" action="/authenticated/duty/create?jobid=${id}" method="get"/>
+	<acme:form-submit test="${command == 'show' || command == 'update' }" code="employer.job.form.button.duty" action="/employer/duty/list-mine?jobid=${id}"  method="get"/>
+	<acme:form-submit test="${command == 'show' || command == 'update' }" code="employer.job.form.button.create-duty" action="/employer/duty/create?jobid=${id}" method="get"/>
   	<acme:form-return code="employer.job.form.button.return"/>
 </acme:form>
