@@ -9,6 +9,7 @@ import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -26,11 +27,14 @@ public class EmployerDutyShowService implements AbstractShowService<Employer, Du
 		int jobId;
 		Duty duty;
 		Job job;
+		Principal principal;
 
+		principal = request.getPrincipal();
 		jobId = request.getModel().getInteger("id");
 		duty = this.repository.findOneById(jobId);
 		job = duty.getJob();
-		result = duty.getJob().getId() == job.getId();
+
+		result = duty.getJob().getId() == job.getId() && job.getEmployer().getUserAccount().getId() == principal.getAccountId();
 
 		return result;
 	}

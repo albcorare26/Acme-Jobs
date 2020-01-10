@@ -45,14 +45,14 @@
  
  	<bean id="announcement01" class="acme.entities.announcements.Announcement">
 		<property name="title" value="Sample announcement 01" />
-		<property name="moment" value="2019/12/22 10:35" />
+		<property name="moment" value="2020/01/01 10:35" />
 		<property name="moreInfo"><null/></property>
 		<property name="text" value="This is the description of a sample announcement" />
 	</bean>
 	
 	<bean id="announcement02" class="acme.entities.announcements.Announcement">
 		<property name="title" value="Sample announcement 02" />
-		<property name="moment" value="2019/12/10 00:00" />
+		<property name="moment" value="2020/01/08 00:00" />
 		<property name="moreInfo" value="http://www.example.org" />
 		<property name="text" value="This is the description of a another announcement" />
 	</bean>
@@ -154,7 +154,7 @@
 	<bean id ="challenge01" class="acme.entities.challenges.Challenge">
 		<property name="title" value="titulo1"></property> 
 		<property name="description" value="description1"></property> 
-		<property name="deadline" value="2020/02/25 00:00"></property> 
+		<property name="deadline" value="2020/03/25 00:00"></property> 
 		<property name="goldReward" value="1500.0€"></property> 
 		<property name="silverReward" value="1000.0€"></property> 
 		<property name="bronzeReward" value="800.0€"></property> 
@@ -280,7 +280,7 @@
 	<bean name="duty1" class="acme.entities.duties.Duty">
 		<property name="title" value="Example1"/>
 		<property name="description" value="This is a 1st example"/>
-		<property name="percentage" value="0.5"/>
+		<property name="percentage" value="1"/>
 		<property name="job" ref="job1"/>
 	</bean>
 	
@@ -370,7 +370,7 @@
 	<bean name="job3" class="acme.entities.jobs.Job">
 		<property name="reference" value="EMP3-JOB3" />
 		<property name="title" value="Title 3" />
-		<property name="deadline" value="2019/07/12 00:00" />
+		<property name="deadline" value="2020/07/12 00:00" />
 		<property name="salary" value="€ 400" />
 		<property name="description" value="This is a 1st example" />
 		<property name="moreInfo" value="http://www.examplesecond.com" />
@@ -403,7 +403,7 @@
 		<property name="identity">
 			<bean class="acme.datatypes.UserIdentity">
 				<property name="name" value="Worker" />
-				<property name="surname" value="One" />
+				<property name="surname" value="Two" />
 				<property name="email" value="worker1@acme.com" />
 			</bean>
 		</property>

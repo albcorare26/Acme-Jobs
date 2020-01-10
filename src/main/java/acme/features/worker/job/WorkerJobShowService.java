@@ -1,8 +1,6 @@
 
 package acme.features.worker.job;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,13 +25,13 @@ public class WorkerJobShowService implements AbstractShowService<Worker, Job> {
 		int jobId;
 		Job job;
 
-		Date moment;
-		moment = new Date(System.currentTimeMillis() - 1);
+		//		Date moment;
+		//		moment = new Date(System.currentTimeMillis() - 1);
 
 		jobId = request.getModel().getInteger("id");
 		job = this.repository.findOneById(jobId);
 
-		result = job.isStatus() == true && job.getDeadline().after(moment);
+		result = job.isStatus() == true;
 
 		return result;
 	}

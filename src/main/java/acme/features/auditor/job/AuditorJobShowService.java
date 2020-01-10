@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import acme.entities.jobs.Job;
 import acme.entities.roles.Auditor;
+import acme.features.auditor.auditrecord.AuditorAuditRecordRepository;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.services.AbstractShowService;
@@ -14,12 +15,28 @@ import acme.framework.services.AbstractShowService;
 public class AuditorJobShowService implements AbstractShowService<Auditor, Job> {
 
 	@Autowired
-	AuditorJobRepository repository;
+	AuditorJobRepository			repository;
+
+	@Autowired
+	AuditorAuditRecordRepository	auditRecordRepository;
 
 
 	@Override
 	public boolean authorise(final Request<Job> request) {
 		assert request != null;
+		//
+		//		boolean result;
+		//		int auditRecordId;
+		//		Collection<AuditRecord> auditRecord;
+		//		Principal principal;
+		//
+		//		principal = request.getPrincipal();
+		//		auditRecordId = request.getModel().getInteger("id");
+		//		auditRecord = this.repository.findAuditRecordById(auditRecordId);
+		//
+		//		result = auditRecord.to == principal.getAccountId();
+		//
+		//		return result;
 		return true;
 	}
 

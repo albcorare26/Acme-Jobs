@@ -9,6 +9,7 @@ import acme.entities.jobs.Job;
 import acme.entities.roles.Auditor;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -26,11 +27,13 @@ public class AuditorAuditRecordShowService implements AbstractShowService<Audito
 		int jobId;
 		AuditRecord auditRecord;
 		Job job;
+		Principal principal;
 
+		principal = request.getPrincipal();
 		jobId = request.getModel().getInteger("id");
 		auditRecord = this.repository.findOneById(jobId);
 		job = auditRecord.getJob();
-		result = auditRecord.getJob().getId() == job.getId();
+		result = auditRecord.getJob().getId() == job.getId() && auditRecord.getAuditor().getUserAccount().getId() == principal.getAccountId();
 
 		return result;
 	}
